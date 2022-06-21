@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Apps
-    'first',
 
 ]
 
