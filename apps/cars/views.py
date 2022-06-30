@@ -9,6 +9,7 @@ class CarListCreateView(ListCreateAPIView):
     queryset = CarModel.objects.all()
 
     def get_queryset(self):
+        print(self.request.user.id)
         qs = self.queryset.all()
         price_gt = self.request.query_params.get('price_gt')
         auto_park_id = self.request.query_params.get('autoParkId')
