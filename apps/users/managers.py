@@ -24,3 +24,6 @@ class UserManager(BaseUserManager):
 
         user = self.create_user(email, password, **extra_kwargs)
         return user
+
+    def my_all_users(self):
+        return self.model.objects.all()
