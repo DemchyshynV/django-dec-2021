@@ -1,5 +1,5 @@
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveDestroyAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
 
 from apps.cars.serializers import CarSerializer
 

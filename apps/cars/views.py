@@ -3,12 +3,12 @@ from rest_framework.permissions import AllowAny
 
 from .models import CarModel
 from .serializers import CarSerializer
-
+from permissions.user_permossions import IsSuperUser
 
 class CarListView(ListAPIView):
     serializer_class = CarSerializer
-    queryset = CarModel.objects.all()
-    permission_classes = (AllowAny,)
+    queryset = CarModel.objects.get_by_price_gt(3000)
+    permission_classes = (IsSuperUser,)
 
     def get_queryset(self):
         print(self.request.user.id)
