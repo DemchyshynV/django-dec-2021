@@ -1,9 +1,11 @@
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny
 
+from permissions.user_permossions import IsSuperUser
+
 from .models import CarModel
 from .serializers import CarSerializer
-from permissions.user_permossions import IsSuperUser
+
 
 class CarListView(ListAPIView):
     serializer_class = CarSerializer
