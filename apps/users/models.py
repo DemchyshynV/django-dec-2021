@@ -16,7 +16,7 @@ class UserModel(AbstractBaseUser, PermissionsMixin):
         RegexValidator(RegEx.PASSWORD.pattern, RegEx.PASSWORD.msg)
     ])
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

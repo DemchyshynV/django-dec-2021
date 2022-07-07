@@ -1,9 +1,14 @@
+import os
 from typing import Type
 
 from django.contrib.auth import get_user_model
+from django.core.mail import EmailMultiAlternatives
 from django.db import transaction
+from django.template.loader import get_template
 
 from rest_framework.serializers import ModelSerializer, ValidationError
+
+from core.services.email_service import EmailService
 
 from .models import ProfileModel, UserModel
 
@@ -57,4 +62,5 @@ class UserSerializer(ModelSerializer):
         profile = validated_data.pop('profile')
         user = UserModel.objects.create_user(**validated_data)
         ProfileModel.objects.create(**profile, user=user)
+        EmailService.register_email(user)
         return user

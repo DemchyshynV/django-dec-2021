@@ -5,7 +5,7 @@ from rest_framework.generics import GenericAPIView, ListCreateAPIView, UpdateAPI
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from permissions.user_permossions import IsSuperUser
+from core.permissions.user_permossions import IsSuperUser
 
 from .serializers import AddAvatarSerializer, UserSerializer
 
