@@ -1,15 +1,18 @@
-from django.core.validators import  MaxValueValidator,  MinValueValidator, RegexValidator
+from datetime import date
+
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.db import models
 
 from apps.auto_parks.models import AutoParksModel
-from .enums import RegEx
 
+from .enums import RegEx
 from .managers import CarManager
-from datetime import date
+
 
 class CarModel(models.Model):
     class Meta:
         db_table = 'cars'
+        ordering = ['id']
 
     brand = models.CharField(max_length=100, validators=(RegexValidator(RegEx.BRAND.pattern, RegEx.BRAND.msg),))
     price = models.IntegerField(validators=(MinValueValidator(0), MaxValueValidator(1000000)))
