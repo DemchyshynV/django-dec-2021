@@ -3,6 +3,7 @@ from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated, I
 
 from apps.cars.serializers import CarSerializer
 
+from .filters import AutoParkFilter
 from .models import AutoParksModel
 from .serializers import AutoParkSerializer
 
@@ -11,6 +12,7 @@ class AutoParksListCreateView(ListCreateAPIView):
     queryset = AutoParksModel.objects.all()
     serializer_class = AutoParkSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
+    filterset_class = AutoParkFilter
 
 
 class AutoParksRetrieveDestroyView(RetrieveDestroyAPIView):
