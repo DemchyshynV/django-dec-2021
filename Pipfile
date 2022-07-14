@@ -13,8 +13,8 @@ pytz = "==2022.1"
 sqlparse = "==0.4.2"
 djangorestframework-simplejwt = "*"
 pillow = "*"
-django-dotenv = "*"
 django-filter = "*"
+drf-yasg2 = "*"
 
 [dev-packages]
 isort = "*"

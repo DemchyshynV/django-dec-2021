@@ -11,7 +11,6 @@ from .serializers import CarSerializer
 class CarListView(ListAPIView):
     serializer_class = CarSerializer
     queryset = CarModel.objects.all()
-    permission_classes = (IsSuperUser,)
     filterset_class = CarFilter
 
     def get_queryset(self):
@@ -29,6 +28,14 @@ class CarListView(ListAPIView):
 
 
 class CarUpdateRetrieveDestroyView(RetrieveUpdateDestroyAPIView):
+    """
+    get:
+        Get one Car
+    put:
+        Update car
+    delete:
+        Delete car
+    """
     serializer_class = CarSerializer
     queryset = CarModel.objects.all()
     permission_classes = (AllowAny,)
