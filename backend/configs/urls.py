@@ -3,8 +3,8 @@ from django.conf.urls.static import static
 from django.urls import include, path
 
 urlpatterns = [
-    path('api/v1', include('api.api_v1', namespace='v11')),
-    path('api/v2', include('api.api_v2', namespace='v22')),
+    path('api/v1', include('api.api_v1', namespace='v1')),
+    path('api/v2', include('api.api_v2', namespace='v2')),
 ]
 
 handler500 = 'rest_framework.exceptions.server_error'

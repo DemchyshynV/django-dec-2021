@@ -5,12 +5,12 @@ from drf_yasg2.views import get_schema_view
 
 from rest_framework.permissions import AllowAny
 
-app_name = 'v11'
+app_name = 'v1'
 
 schema_view = get_schema_view(
     openapi.Info(
         title="Autoparks API",
-        default_version='v11',
+        default_version='v1',
         description="About cars",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
