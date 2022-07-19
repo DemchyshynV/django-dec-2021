@@ -15,6 +15,10 @@ djangorestframework-simplejwt = "*"
 pillow = "*"
 django-filter = "*"
 drf-yasg2 = "*"
+celery = "*"
+redis = "*"
+django-celery-results = "*"
+django-celery-beat = "*"
 
 [dev-packages]
 isort = "*"

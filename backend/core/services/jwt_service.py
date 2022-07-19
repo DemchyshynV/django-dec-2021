@@ -37,3 +37,6 @@ class JwtService:
         action_token.blacklist()
         user_id = action_token.payload.get('user_id')
         return get_object_or_404(UserModel, pk=user_id)
+
+
+
